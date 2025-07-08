@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  <title>Pesan HTML buat Kamu Nih! <3</title>
+  <meta name="description" content="Buka bentar yaa.. HTML feeldream.id">
+  <meta name="keywords" content="HTML, Bucin, Feeldream">
+  <meta name="author" content="Feeldream">
+
+  <!-- Fonts & SweetAlert -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+  <!-- CSS External -->
+  <link rel="stylesheet" href="https://htmlku.com/night/play/style.css">
+
+  <style>
+    /* Efek bintang berkedip */
+    .bintang {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+      opacity: 0.8;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Emoji malam jatuh */
+    .floaty {
+      position: fixed;
+      font-size: 18px;
+      animation: floatyAnim 4s ease-in-out infinite;
+      color: white;
+      opacity: 0.7;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes floatyAnim {
+      0% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.8; }
+    }
+
+    /* Perbesar gambar StellaLou */
+    #suratin img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Bungkus gambar dan teks klik */
+    .bungkusSuratin {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    /* Kotak klik gambar */
+    #ket {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      font-family: 'Work Sans', sans-serif;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+    }
+
+    /* Credit Text */
+#credit {
+  margin-top: 40px; /* sebelumnya 24px */
+  font-size: 20px;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  text-align: center;
+  opacity: 0.85;
+  animation: creditFloat 3s ease-in-out infinite; /* animasi gerak */
+}
+
+@keyframes creditFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); } /* gerakan turun-naik */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Audio -->
+  <audio id="linkmp3" loop hidden preload="auto">
+    <source src="https://www.dropbox.com/scl/fi/egve59x47qk24icpwsp0u/Cry-On-My-Shoulder-Westlife-Toni-Braxton.mp3?rlkey=459m6kcwv6da2zuhpalmm50ad&st=eritjxtm&raw=1" type="audio/mpeg">
+  </audio>
+
+  <!-- Background & Blur -->
+  <div id="bodyblur">
+    <img src="https://s14.gifyu.com/images/bKz4q.jpg" id="wallpaper"/>
+    <div id="beneranblur"></div>
+  </div>
+
+  <!-- Konten Utama -->
+  <div id='Content'>
+    <div class="bungkusSuratin" onClick="memulai();">
+      <div id="suratin">
+        <img src="https://s14.gifyu.com/images/bKSEV.gif"/>
+      </div>
+      <p id="ket">Klik Gambar</p>
+      <p id="credit">J.Tan</p>
+    </div>
+
+    <div class="kumpulanstiker">
+      <img src="https://feeldreams.github.io/pusn.gif" id="stiker1"/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stiker2"/>
+      <img src="https://feeldreams.github.io/mndkat.gif" id="stiker3"/>
+      <img src="https://feeldreams.github.io/smprt.gif" id="stiker4"/>
+      <img src="https://feeldreams.github.io/ngumpet.gif" id="stiker5"/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stiker" onClick="ftaksi();"/>
+      <img src="https://feeldreams.github.io/bunga.gif" id="stikerAkhir"/>
+    </div>
+
+    <p id="halo">Good Night!</p>
+
+    <div><blockquote id='bq'>
+      <p id="kalimat">Dah Segitu Aja ya.. 🤭</p>
+      <p id="kalimat2">Selamat melepas lelah, Bobo yang cantik dan pules ya.. Semoga besok jalani harinya lebih baik 🙌✨</p>
+      <p id="kalimatbawah">I Miss You</p>
+      <p id="kalimatbawah2" class="sembunyi">Good Night 💤</p>
+      <p id="kalimatbawah3" class="sembunyi">Mimpi Indah ya 🌙💭</p>
+    </blockquote></div>
+
+    <div id="Tombol">
+      <a href="https://wa.me/6281994587775?text=Awww%20Good%20Night%20too%20%F0%9F%8C%A9%F0%9F%A4%97%F0%9F%A4%A5" target="_blank">
+        <b id="tmbl">💌 Kirim</b>
+      </a>
+    </div>
+
+    <span id="pesanWA" class="sembunyi">Awww Good Night too ❤️❤️❤️</span>
+  </div>
+
+  <!-- Bintang Berkedip -->
+  <script>
+    function createTwinklingStars() {
+      const jumlahBintang = 5;
+      for (let i = 0; i < jumlahBintang; i++) {
+        const star = document.createElement('div');
+        star.classList.add('bintang');
+        const ukuran = Math.random() * 3 + 2;
+        star.style.width = ukuran + 'px';
+        star.style.height = ukuran + 'px';
+        star.style.top = Math.random() * window.innerHeight + 'px';
+        star.style.left = Math.random() * window.innerWidth + 'px';
+        star.style.opacity = Math.random() * 0.5 + 0.5;
+        document.body.appendChild(star);
+        setTimeout(() => star.remove(), 8000);
+      }
+    }
+    setInterval(createTwinklingStars, 150);
+  </script>
+
+  <!-- Emoji Jatuhan -->
+  <script>
+    function createFloatingNightIcons() {
+      const jumlah = 25;
+      const ikon = ['🌙','✨','💫','🌌','💤'];
+
+      for (let i = 0; i < jumlah; i++) {
+        const floaty = document.createElement('div');
+        floaty.className = 'floaty';
+        floaty.innerText = ikon[Math.floor(Math.random() * ikon.length)];
+        floaty.style.left = Math.random() * 100 + '%';
+        floaty.style.top = Math.random() * 100 + '%';
+        floaty.style.fontSize = `${Math.random() * 10 + 14}px`;
+        floaty.style.animationDuration = `${Math.random() * 4 + 3}s`;
+        document.body.appendChild(floaty);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', createFloatingNightIcons);
+  </script>
+
+  <!-- SweetAlert + Audio Trigger -->
+  <script>
+    const audio = document.getElementById('linkmp3');
+
+    async function pesanAwal() {
+      suratin.style.display = "none";
+      ket.style.display = "none";
+
+      const delay = 12000;
+
+      await swalst.fire({
+        title: 'Hai, Uci 😎',
+        imageUrl: stiker1.src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+      await swalst.fire({
+        title: 'Koko Cuma Mau Bilang 😚💬 ',
+        imageUrl: stiker2.src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+      await swalst.fire({
+        title: 'Koko Masih Ada Yaa! 🤭',
+        imageUrl: stiker3.src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+      await swalst.fire({
+        title: 'Gabole bobo malem², nanti kantong matanya makin keliatan, istirahat yang cukup biar tetap sehat dan ceria besok ☀️💪🔥 ',
+        imageUrl: stiker4.src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+      await swalst.fire({
+        title: 'Hari ini uci udah hebat banget. udah berusaha semampunya, maybe gak semua hal berjalan sesuai harapan. Tapi koko tahu, uci udah ngelakuin yg terbaik. Sekarang waktunya istirahat ya.. biar hati uci tenang, pikiran uci rileks, dan tubuh uci bisa pulih 🌙💤 ',
+        imageUrl: stiker5.src,
+        showConfirmButton: false,
+        timer: delay,
+        allowOutsideClick: false
+      });
+
+      mulaikonten();
+    }
+
+    function memulai() {
+      audio.play();
+      pesanAwal();
+    }
+  </script>
+
+  <script src="https://htmlku.com/night/play/script.js"></script>
+  
+</body>
+</html>
